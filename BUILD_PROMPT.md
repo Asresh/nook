@@ -253,7 +253,10 @@ Material 3 dark theme, transparent app bar, 16px input radius, 24px card radius,
 
 ## 10. Local development
 
-### Install
+### Check tools first
+Provide `scripts/setup.sh`, which checks Homebrew, Flutter/Dart, Google Chrome, Go, `livekit-server`, `git`, `curl`, and `lsof`. It must ask before installing anything. If the user declines an install, print the exact manual command and exit non-zero so the build stops. Support `--check`, `--yes`, `--build`, and `--quiet`.
+
+### Install manually (if preferred)
 ```bash
 brew install --cask flutter
 brew install cocoapods

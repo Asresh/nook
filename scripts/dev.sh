@@ -3,6 +3,10 @@ set -euo pipefail
 
 cd "$(dirname "$0")/.."
 
+if [[ "${NOOK_SKIP_SETUP:-0}" != "1" ]]; then
+  ./scripts/setup.sh --quiet
+fi
+
 LIVEKIT_BIN="${LIVEKIT_SERVER_BIN:-$HOME/.local/bin/livekit-server}"
 
 if ! lsof -iTCP:7880 -sTCP:LISTEN >/dev/null 2>&1; then
